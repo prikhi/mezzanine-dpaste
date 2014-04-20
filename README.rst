@@ -3,14 +3,15 @@ MezzPaste
 ==========
 
 
-MezzPaste is a `Mezzanine`_ app that integrates the Django pastebin `dpaste`
+MezzPaste is a `Mezzanine`_ app that integrates the Django pastebin `dpaste`_
 into the framework. It is functionally similar to the ``mezzanine.blog``.
 
 
 Usage
 ======
 
-First following the `dpaste instructions`_ for integrating dpaste into an existing Django project.
+First follow the `dpaste instructions`_ for integrating dpaste into an existing
+Django project.
 
 Then install this package using ``pip``::
 
