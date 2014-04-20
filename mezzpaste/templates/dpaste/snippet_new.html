@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load future %}
+
+{% load mezzanine_tags %}
+
+{% block meta_title %}{% trans "New Paste" %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+  {% trans "Create a new code snippet." %}
+{% endmetablock %}{% endblock %}
+
+{% block title %}{% trans "New Paste" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+  {{ block.super }}
+  <li>{% trans "Pastes" %}</li>
+{% endblock %}
+
+{% block main %}
+  {% include "dpaste/snippet_form.html" %}
+{% endblock %}
