@@ -15,7 +15,7 @@ Django project.
 
 Then install this package using ``pip``::
 
-    pip install mezzanine-mezz
+    pip install mezzanine-dpaste
 
 Add the package to your ``INSTALLED_APPS``, above the ``dpaste`` app::
 
