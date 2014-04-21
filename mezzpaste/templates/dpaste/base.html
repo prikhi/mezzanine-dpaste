@@ -5,3 +5,7 @@
 {% block extra_css %}
   <link rel="stylesheet" href="{% static "mezzpaste/css/mezzpaste.css" %}">
 {% endblock %}
+
+{% block right_panel %}
+  {% include "mezzpaste/includes/stats_panel.html" %}
+{% endblock %}

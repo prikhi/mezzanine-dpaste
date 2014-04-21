@@ -1,0 +1,21 @@
+{% load mezzpaste_tags mezzpaste_filters i18n future %}
+
+{% block top_lexers %}
+  {% mezzpaste_stats 10 as top_lexers %}
+  {% if top_lexers %}
+    <h3>{% trans "Top Languages" %}</h3>
+    <table class="table table-striped">
+      <tbody>
+        {% for lexer in top_lexers %}
+          <tr><td
+              {% if snippet.lexer == lexer.lexer %}class="active"{% endif %}
+              >
+            {{ lexer.lexer|lexer_display_name }}
+            <span class="badge pull-right">{{ lexer.count }}</span>
+          </tr></td>
+        {% endfor %}
+      </tbody>
+    </table>
+    </ul>
+  {% endif %}
+{% endblock %}
