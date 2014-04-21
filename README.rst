@@ -4,7 +4,7 @@ MezzPaste
 
 
 MezzPaste is a `Mezzanine`_ app that integrates the Django pastebin `dpaste`_
-into the framework. It is functionally similar to the ``mezzanine.blog``.
+into the Mezzanine framework.
 
 
 Usage
@@ -26,7 +26,13 @@ Add the package to your ``INSTALLED_APPS``, above the ``dpaste`` app::
         'dpaste',
     )
 
-If you want to include a link in the Navigation, create a RichTextPage in
+To enable syntax highlighting, generate a pygments CSS file and include it in
+your ``base.html``::
+
+    pygmentize -S default -f html -a highlight > pygments.css
+
+
+If you want to include a link in a Navigation menu, create a RichTextPage in
 Mezzanine with the same URL as the dpaste URL you added to urls.py.
 
 For example, if you added ``('^pastes/', include('dpaste.urls'))`` to your base
