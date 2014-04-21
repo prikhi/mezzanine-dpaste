@@ -3,11 +3,6 @@
 
 {% load mezzpaste_filters %}
 
-<style>
-#id_content {
-  max-width: 100%;
-}
-</style>
 
 <form method="post" action="" class="form">
   {% csrf_token %}
@@ -45,7 +40,6 @@
   </div>
 
   <div class="form-actions">
-    <input tabindex="0" type="submit"class="btn btn-primary" value="{% trans "Paste it" %}">
-    <span class="shortcut">&#8984;+&#9166; or Ctrl+&#9166;</span>
+    <input tabindex="0" type="submit" class="btn btn-primary" value="{% trans "Paste it" %}" />
   </div>
 </form>
