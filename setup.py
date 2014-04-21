@@ -4,14 +4,11 @@ from distutils.core import setup
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
-PACKAGE_DATA = {'mezzpaste': ['mezzpaste/templates/*.*']}
-
 
 setup(
     name='mezzanine-dpaste',
-    version='0',
+    version='1.0.0',
     packages=['mezzpaste'],
-    package_data=PACKAGE_DATA,
     license='GPLv3',
     description='A Mezzanine app to integrate dpaste, a Django pastebin.',
     long_description=README,
@@ -19,7 +16,7 @@ setup(
     author='Pavan Rikhi',
     author_email='pavan@sleepanarchy.com',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
