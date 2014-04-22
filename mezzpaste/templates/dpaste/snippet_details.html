@@ -13,8 +13,7 @@
 
 {% block breadcrumb_menu %}
   {{ block.super }}
-  <li><a href="{% url "dpaste.views.snippet_new" %}">{% trans "Pastes" %}</a></li>
-  <li>{% trans "Paste" %} #{{ snippet.pk }}</li>
+  <li class="active">{% trans "Paste" %} #{{ snippet.pk }}</li>
 {% endblock %}
 
 {% block main %}

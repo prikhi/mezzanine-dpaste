@@ -10,36 +10,43 @@ into the Mezzanine framework.
 Usage
 ======
 
-First follow the `dpaste instructions`_ for integrating dpaste into an existing
-Django project.
+First install the package and dependencies using ``pip``::
 
-Then install this package using ``pip``::
+    pip install mptt dpaste mezzanine-dpaste
 
-    pip install mezzanine-dpaste
-
-Add the package to your ``INSTALLED_APPS``, above the ``dpaste`` app::
+Add the packages to your ``INSTALLED_APPS``, it is important to list
+``mezzpaste`` above the ``dpaste`` app::
 
     INSTALLED_APPS = (
         # ...
 
+        'mptt',
         'mezzpaste',
         'dpaste',
     )
+
+Include the ``mezzpaste.urls`` in your Mezzanine project's ``urls.py``, above
+the ``mezzanine.urls`` include::
+
+    urlpatterns += patterns('',
+        ("^pastes/", include('mezzpaste.urls'))
+        ("^", include("mezzanine.urls")),
+    )
+
+Add a cron job to purge expired pastes::
+
+    30 * * * * /path/to/virtualenv/bin/python /path/to/project/manage.py cleanup_snippets > /dev/null
 
 To enable syntax highlighting, generate a pygments CSS file and include it in
 your ``base.html``::
 
     pygmentize -S default -f html -a highlight > pygments.css
 
+If you want to include a link in a Navigation menu, create a Page in Mezzanine
+with the same URL as the mezzpaste URL you added to your project's ``urls.py``.
 
-If you want to include a link in a Navigation menu, create a RichTextPage in
-Mezzanine with the same URL as the dpaste URL you added to urls.py.
-
-For example, if you added ``('^pastes/', include('dpaste.urls'))`` to your base
-``urls.py``, you would need to create a RichTextPage with the name ``Pastes``.
-If instead you added ``('^foo/pastes/', include('dpaste.urls'))``, you would
-create a ``Pastes`` page under a ``Foo`` page.
+For additional configuration settings, see the `dpaste Documentation`_.
 
 .. _dpaste: https://github.com/bartTC/dpaste
-.. _dpaste instructions: http://dpaste.readthedocs.org/en/latest/integration.html
+.. _dpaste Documentation: http://dpaste.readthedocs.org/en/latest/settings.html
 .. _Mezzanine: http://mezzanine.jupo.org/

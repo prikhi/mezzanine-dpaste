@@ -13,11 +13,6 @@
 
 {% block title %}{% trans "New Paste" %}{% endblock %}
 
-{% block breadcrumb_menu %}
-  {{ block.super }}
-  <li>{% trans "Pastes" %}</li>
-{% endblock %}
-
 {% block main %}
   {% include "dpaste/snippet_form.html" %}
 {% endblock %}
