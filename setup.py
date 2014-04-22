@@ -8,13 +8,13 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
     name='mezzanine-dpaste',
-    version='1.0.3',
+    version='1.1.0',
     packages=find_packages(),
     include_package_data=True,
     license='GPLv3',
     description='A Mezzanine app to integrate dpaste, a Django pastebin.',
     long_description=README,
-    url='http://github.com/prikhi/mezzanine-paste',
+    url='http://github.com/prikhi/mezzanine-dpaste',
     author='Pavan Rikhi',
     author_email='pavan@sleepanarchy.com',
     classifiers=[
