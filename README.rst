@@ -12,7 +12,7 @@ Usage
 
 First install the package and dependencies using ``pip``::
 
-    pip install mptt dpaste mezzanine-dpaste
+    pip install mezzanine-dpaste
 
 Add the packages to your ``INSTALLED_APPS``, it is important to list
 ``mezzpaste`` above the ``dpaste`` app::
@@ -29,7 +29,7 @@ Include the ``mezzpaste.urls`` in your Mezzanine project's ``urls.py``, above
 the ``mezzanine.urls`` include::
 
     urlpatterns += patterns('',
-        ("^pastes/", include('mezzpaste.urls'))
+        ("^pastes/", include('mezzpaste.urls')),
         ("^", include("mezzanine.urls")),
     )
 
