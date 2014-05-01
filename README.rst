@@ -25,11 +25,11 @@ Add the packages to your ``INSTALLED_APPS``, it is important to list
         'dpaste',
     )
 
-Include the ``mezzpaste.urls`` in your Mezzanine project's ``urls.py``, above
-the ``mezzanine.urls`` include::
+Include the ``dpaste.urls`` in your Mezzanine project's ``urls.py``, above
+``mezzanine.urls``::
 
     urlpatterns += patterns('',
-        ("^pastes/", include('mezzpaste.urls')),
+        ("^pastes/", include('dpaste.urls.dpaste')),
         ("^", include("mezzanine.urls")),
     )
 
