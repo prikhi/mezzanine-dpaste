@@ -22,7 +22,7 @@ def mezzpaste_stats(limit=5):
     return list(top_lexers[:limit])
 
 
-@register.as_tag
+@register.simple_tag
 def mezzpaste_pygments_css_class():
     """Return the Pygments CSS Class Specified in the Settings module."""
-    return settings.get('MEZZPASTE_PYGMENTS_CSS', 'highlight')
+    return settings.MEZZPASTE_PYGMENTS_CSS
