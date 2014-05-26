@@ -1,6 +1,6 @@
-{% load dpaste_tags %}
+{% load dpaste_tags mezzpaste_tags %}
 
-<div class="highlight-{{ snippet.lexer }}"><div class="highlight">
+<div class="highlight-{{ snippet.lexer }}"><div class="{% mezzpaste_pygments_css_class %}">
 <div class="code"><ol>{% for line in snippet|highlight %}<li id="{{ forloop.counter }}">{{ line|safe|default:"&nbsp;" }}</li>
 {% endfor %}</ol></div>
 </div></div>

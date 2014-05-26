@@ -42,6 +42,11 @@ your ``base.html``::
 
     pygmentize -S default -f html -a highlight > pygments.css
 
+You can specify the CSS class used by the templates via the
+``MEZZPASTE_PYGMENTS_CSS`` setting::
+    
+    MEZZPASTE_PYGMENTS_CSS = 'codehilite'
+
 If you want to include a link in a Navigation menu, create a Page in Mezzanine
 with the same URL as the mezzpaste URL you added to your project's ``urls.py``.
 

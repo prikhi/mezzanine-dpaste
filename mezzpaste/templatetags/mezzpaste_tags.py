@@ -1,4 +1,5 @@
 from django.db.models import Count
+from django.conf import settings
 from dpaste.models import Snippet
 from mezzanine import template
 
@@ -19,3 +20,9 @@ def mezzpaste_stats(limit=5):
     top_lexers = Snippet.objects.values('lexer').annotate(
         count=Count('lexer')).order_by('-count')
     return list(top_lexers[:limit])
+
+
+@register.as_tag
+def mezzpaste_pygments_css_class():
+    """Return the Pygments CSS Class Specified in the Settings module."""
+    return settings.get('MEZZPASTE_PYGMENTS_CSS', 'highlight')
