@@ -33,7 +33,7 @@ Include the ``dpaste.urls`` in your Mezzanine project's ``urls.py``, above
         ("^", include("mezzanine.urls")),
     )
 
-Add a cron job to purge expired pastes::
+Add a cron job to purge expired pastes(``crontab -e``)::
 
     30 * * * * /path/to/virtualenv/bin/python /path/to/project/manage.py cleanup_snippets > /dev/null
 
@@ -43,9 +43,10 @@ your ``base.html``::
     pygmentize -S default -f html -a highlight > pygments.css
 
 You can specify the CSS class used by the templates via the
-``MEZZPASTE_PYGMENTS_CSS`` setting::
-    
-    MEZZPASTE_PYGMENTS_CSS = 'codehilite'
+``MEZZPASTE_PYGMENTS_CSS`` setting(``highlight`` is the default value)::
+
+    # yourproject/settings.py
+    MEZZPASTE_PYGMENTS_CSS = 'highlight'
 
 If you want to include a link in a Navigation menu, create a Page in Mezzanine
 with the same URL as the mezzpaste URL you added to your project's ``urls.py``.
